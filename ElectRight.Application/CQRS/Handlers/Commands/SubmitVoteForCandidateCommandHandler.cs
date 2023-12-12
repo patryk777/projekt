@@ -2,7 +2,11 @@
 using ElectRight.Mediator.Commands;
 using ElectRightApplication.Data;
 using ElectRightApplication.Data.UnitOfWork;
+using ElectRightApplication.Interfaces;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
+
 
 namespace ElectRightApplication.CQRS.Handlers.Commands
 {
@@ -14,25 +18,27 @@ namespace ElectRightApplication.CQRS.Handlers.Commands
     
         public required int CandidateId { get; set; }
         
-        public Task Handle(IUnitOfWorkService<Candidate> service, IRepository<Candidate> candidateRepository, IRepository<Vote> voteRepository, IRepository<Voter> voterRepository, Logger<SubmitVoteForCandidateCommandHandler> logger) {
+        public async Task<bool> Handle(IUnitOfWorkService<Candidate> service, IRepository<Candidate> candidateRepository, IRepository<Vote> voteRepository, IRepository<Voter> voterRepository, ILogger<SubmitVoteForCandidateCommandHandler> logger) {
             try
             {
-                service.BeginTransactionAsync();
+                await service.BeginTransactionAsync();
 
-                var dbCandidate = candidateRepository.GetByIdAsync(CandidateId);
-                dbVoter ?? throw new InvalidOperationException(@"{1} from DB doesn't exist with id={0}  of {1}",CandidateId, nameof(Voter));
+                var dbCandidate = await candidateRepository.GetByIdAsync(CandidateId);
+                if(dbCandidate == null) throw new InvalidOperationException(string.Format("{1} from DB doesn't exist with id={0}  of {1}",CandidateId, nameof(Voter)));
 
-                var dbVoter = voterRepository.GetByIdAsync(VoterId);
-                dbVoter ?? throw new InvalidOperationException(@"{1} from DB doesn't exist with id={0}  of {1}",VoterId, nameof(Voter));
+                var dbVoter = await voterRepository.GetByIdAsync(VoterId);
+                if(dbVoter == null) throw new InvalidOperationException(string.Format(@"{1} from DB doesn't exist with id={0}  of {1}",VoterId, nameof(Voter)));
 
-                service.EndTransactionAsync();
+                await service.EndTransactionAsync();
             }
             catch (Exception e)
             {
-                logger.LogError(nameof(SubmitVoteForCandidateCommandHandler) + " throwns the exception", e);
+                logger.LogError(e, nameof(SubmitVoteForCandidateCommandHandler) + " throws the exception");
+                throw;
             }
 
-            service.SaveChangesAsync();
+            await service.SaveChangesAsync();
+            return true;
         }
     }
 }

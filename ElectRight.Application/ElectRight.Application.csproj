@@ -20,7 +20,6 @@
 
     <ItemGroup>
       <Folder Include="CQRS\Handlers\Events\" />
-      <Folder Include="Events\" />
     </ItemGroup>
 
 </Project>
