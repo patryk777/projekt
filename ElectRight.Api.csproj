@@ -1,0 +1,219 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>true</InvariantGlobalization>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Azure.Identity" Version="1.7.0" />
+        <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureKeyVault" Version="3.1.24" />
+        <PackageReference Include="Microsoft.AspNetCore.DataProtection.AzureStorage" Version="3.1.24" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="ElectRight.Domain\**"/>
+        <Compile Remove="ElectRight.Infrastructure\**"/>
+        <Compile Update="ElectRight.Application\Class1.cs">
+            <Link>ElectRightApplication\Class1.cs</Link>
+        </Compile>
+        <Compile Remove="ElectRight.Application\**"/>
+        <Compile Remove="ElectRight.Presentation\**"/>
+        <Compile Remove="ElectRight.Configuration\**" />
+        <Compile Update="ElectRight.Api.Contracts\Class1.cs">
+          <Link>ClassLibrary1\Class1.cs</Link>
+        </Compile>
+        <Compile Remove="ElectRight.Api.Contracts\obj\**" />
+        <Compile Remove="ElectRight.Api.Contracts\**" />
+        <Compile Remove="ElectRight.Mediator\obj\**" />
+        <Compile Update="ElectRight.Core\Errors\ErrorResponse.cs">
+          <Link>ElectRight.Core\Errors\ErrorResponse.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Errors\ValidationError.cs">
+          <Link>ElectRight.Core\Errors\ValidationError.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Options\IOptions.cs">
+          <Link>ElectRight.Core\Options\IOptions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Options\JwtOptions.cs">
+          <Link>ElectRight.Core\Options\JwtOptions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Options\CorsOptions.cs">
+          <Link>ElectRight.Core\Options\CorsOptions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Exceptions\BaseCustomException.cs">
+          <Link>ElectRight.Core\Exceptions\BaseCustomException.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\CorsExtensions.cs">
+          <Link>ElectRight.Core\Extensions\CorsExtensions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\StringsExtensions.cs">
+          <Link>ElectRight.Core\Extensions\StringsExtensions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\AssemblyExtensions.cs">
+          <Link>ElectRight.Core\Extensions\AssemblyExtensions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\ApiBehaviorConfiguration.cs">
+          <Link>ElectRight.Core\Extensions\ApiBehaviorConfiguration.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\FluentValidationExtensions.cs">
+          <Link>ElectRight.Core\Extensions\FluentValidationExtensions.cs</Link>
+        </Compile>
+        <Compile Update="ElectRight.Core\Extensions\CustomAuthenticationExtensions.cs">
+          <Link>ElectRight.Core\Extensions\CustomAuthenticationExtensions.cs</Link>
+        </Compile>
+        <Compile Remove="ElectRight.EventGrid\bin\**" />
+        <Compile Remove="ElectRight.EventGrid\obj\**" />
+        <Compile Remove="ElectRight.Mediator\bin\**" />
+        <Compile Remove="ElectRight.Mediator\obj\**" />
+        <Compile Remove="ElectRight.Core\obj\**" />
+        <Compile Remove="ElectRight.Core\bin\**" />
+        <Compile Remove="ElectRight.Core\**" />
+        <Compile Remove="ElectRight.EventGrid\**" />
+        <Compile Remove="ElectRight.Mediator\**" />
+        <Compile Remove="ElectRight.Core\**" />
+        <Compile Remove="ElectRight.Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="ElectRight.Domain\**" />
+        <EmbeddedResource Remove="ElectRight.Infrastructure\**" />
+        <EmbeddedResource Remove="ElectRight.Application\**" />
+        <EmbeddedResource Remove="ElectRight.Presentation\**" />
+        <EmbeddedResource Remove="ElectRight.Configuration\**" />
+        <EmbeddedResource Remove="ElectRight.Api.Contracts\obj\**" />
+        <EmbeddedResource Remove="ElectRight.Api.Contracts\**" />
+        <EmbeddedResource Remove="ElectRight.Mediator\obj\**" />
+        <EmbeddedResource Remove="ElectRight.EventGrid\bin\**" />
+        <EmbeddedResource Remove="ElectRight.EventGrid\obj\**" />
+        <EmbeddedResource Remove="ElectRight.Mediator\bin\**" />
+        <EmbeddedResource Remove="ElectRight.Mediator\obj\**" />
+        <EmbeddedResource Remove="ElectRight.Core\obj\**" />
+        <EmbeddedResource Remove="ElectRight.Core\bin\**" />
+        <EmbeddedResource Remove="ElectRight.Core\**" />
+        <EmbeddedResource Remove="ElectRight.EventGrid\**" />
+        <EmbeddedResource Remove="ElectRight.Mediator\**" />
+        <EmbeddedResource Remove="ElectRight.Core\**" />
+        <EmbeddedResource Remove="ElectRight.Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="ElectRight.Domain\**" />
+        <Content Remove="ElectRight.Infrastructure\**" />
+        <Content Remove="ElectRight.Application\**" />
+        <Content Remove="ElectRight.Presentation\**" />
+        <Content Remove="ElectRight.Configuration\**" />
+        <Content Remove="ElectRight.Api.Contracts\obj\**" />
+        <Content Remove="ElectRight.Api.Contracts\**" />
+        <Content Remove="ElectRight.Mediator\obj\**" />
+        <Content Remove="ElectRight.EventGrid\bin\**" />
+        <Content Remove="ElectRight.EventGrid\obj\**" />
+        <Content Remove="ElectRight.Mediator\bin\**" />
+        <Content Remove="ElectRight.Mediator\obj\**" />
+        <Content Remove="ElectRight.Core\obj\**" />
+        <Content Remove="ElectRight.Core\bin\**" />
+        <Content Remove="ElectRight.Core\**" />
+        <Content Remove="ElectRight.EventGrid\**" />
+        <Content Remove="ElectRight.Mediator\**" />
+        <Content Remove="ElectRight.Core\**" />
+        <Content Remove="ElectRight.Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="ElectRight.Domain\**" />
+        <None Remove="ElectRight.Infrastructure\**" />
+        <None Remove="ElectRight.Application\**" />
+        <None Remove="ElectRight.Presentation\**" />
+        <None Remove="ElectRight.Configuration\**" />
+        <None Remove="ElectRight.Api.Contracts\obj\**" />
+        <None Remove="ElectRight.Api.Contracts\**" />
+        <None Remove="ElectRight.Mediator\obj\**" />
+        <None Remove="ElectRight.EventGrid\bin\**" />
+        <None Remove="ElectRight.EventGrid\obj\**" />
+        <None Remove="ElectRight.Mediator\bin\**" />
+        <None Remove="ElectRight.Mediator\obj\**" />
+        <None Remove="ElectRight.Core\obj\**" />
+        <None Remove="ElectRight.Core\bin\**" />
+        <None Remove="ElectRight.Core\**" />
+        <None Remove="ElectRight.EventGrid\**" />
+        <None Remove="ElectRight.Mediator\**" />
+        <None Remove="ElectRight.Core\**" />
+        <None Remove="ElectRight.Tests\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="ElectRight.Domain\obj\ElectRight.Domain.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Domain\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Domain\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Infrastructure\obj\ElectRight.Infrastructure.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Infrastructure\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Infrastructure\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Application\obj\ElectRight.Application.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Application\obj\ElectRightApplication.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Application\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Application\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\appsettings.Development.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\appsettings.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\obj\ElectRight.Presentation.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Properties\launchSettings.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\App.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Layout\MainLayout.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Layout\NavMenu.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Pages\Counter.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Pages\Error.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Pages\Home.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Pages\Weather.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\Routes.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Presentation\Components\_Imports.razor" />
+        <_ContentIncludedByDefault Remove="ElectRight.Configuration\obj\ElectRight.Configuration.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Configuration\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Configuration\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Api.Contracts\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Api.Contracts\obj\ElectRight.Api.Contracts.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Api.Contracts\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\ElectRight.Mediator.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\bin\Debug\net7.0\Kontrolki.Common.EventGrid.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\bin\Debug\net8.0\Kontrolki.Common.EventGrid.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\obj\Debug\net8.0\Kontrolki.Common.EventGrid.sourcelink.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\obj\Kontrolki.Common.EventGrid.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\bin\Debug\net8.0\Kontrolki.Common.Mediator.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\Debug\net8.0\Kontrolki.Common.Mediator.sourcelink.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\Kontrolki.Common.Mediator.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\Kontrolki.Common.Core.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\bin\Debug\net7.0\Kontrolki.Common.Core.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\bin\Debug\net8.0\ElectRight.Core.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\bin\Debug\net8.0\Kontrolki.Common.Core.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\Debug\net8.0\ElectRight.Core.sourcelink.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\ElectRight.Core.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Core\obj\ElectRight.Core.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\bin\Debug\net8.0\ElectRight.EventGrid.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.EventGrid\obj\Debug\net8.0\ElectRight.EventGrid.sourcelink.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\bin\Debug\net8.0\ElectRight.Mediator.deps.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Mediator\obj\Debug\net8.0\ElectRight.Mediator.sourcelink.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Tests\obj\ElectRight.Tests.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Tests\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="ElectRight.Tests\obj\project.packagespec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="ElectRight.Api.Contracts\ElectRight.Api.Contracts.csproj" />
+      <ProjectReference Include="ElectRight.Application\ElectRight.Application.csproj" />
+      <ProjectReference Include="ElectRight.Infrastructure\ElectRight.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

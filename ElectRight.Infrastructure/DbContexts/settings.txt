@@ -1,0 +1,4 @@
+root: C:\Users\patryk.walkiewicz\source\repos\ElectRight.Api\ElectRight.Infrastructure\DbContexts 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none

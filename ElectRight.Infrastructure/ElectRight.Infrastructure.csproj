@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="App\Candidate\Repositories\" />
+        <Folder Include="App\Candidate\UnitOfWorkServices\" />
+        <Folder Include="App\Shared\" />
+        <Folder Include="App\Voter\Services\" />
+        <Folder Include="App\Voter\UnitOfWork\" />
+        <Folder Include="App\Vote\Models\" />
+        <Folder Include="App\Vote\Repositories\" />
+        <Folder Include="App\Vote\Services\" />
+        <Folder Include="App\Vote\UnitOfWork\" />
+        <Folder Include="DbContexts\" />
+        <Folder Include="Migrations\"/>
+        <Folder Include="Repositores\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="DbContexts\PATH.txt"/>
+        <None Remove="DbContexts\settings.txt"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ElectRight.Application\ElectRight.Application.csproj"/>
+        <ProjectReference Include="..\ElectRight.Mediator\ElectRight.Mediator.csproj" />
+        <ProjectReference Include="..\ElectRight.Configuration\ElectRight.Configuration.csproj" />
+    </ItemGroup>
+
+</Project>

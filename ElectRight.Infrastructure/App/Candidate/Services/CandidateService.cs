@@ -6,23 +6,18 @@ namespace ElectRight.Infrastructure.App.Candidate.Services
 {
     public class CandidateService(ICommandBus commandBus, ILogger<CandidateService> logger) : ICandidateService
     {
-        public CandidateService()
-        {
-        }
-
         public async Task<DTOs.Candidate> CreateCandidateAsync(DTOs.Candidate candidate)
         {
-            if (candidate == null)
-            {
-                throw new ArgumentNullException(nameof(candidate));
-            }
+            ArgumentNullException.ThrowIfNull(candidate);
 
             try
             {
                 var createCandidateCommand = new RegisterCandidateCommand(candidate)
                 {
                     Id = candidate.Id,
-                    name = candidate.Name
+                    name = candidate.Name,
+                    VoteId = 0,
+                    VoterId = 0
                 };
                 var result = await commandBus.Send<RegisterCandidateCommand, DTOs.Candidate>(createCandidateCommand);
 
