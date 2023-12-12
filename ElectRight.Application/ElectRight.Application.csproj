@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>ElectRightApplication</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ElectRight.Api.Contracts\ElectRight.Api.Contracts.csproj" />
+        <ProjectReference Include="..\ElectRight.Domain\ElectRight.Domain.csproj"/>
+        <ProjectReference Include="..\ElectRight.Mediator\ElectRight.Mediator.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.1.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="CQRS\Handlers\Events\" />
+      <Folder Include="Events\" />
+    </ItemGroup>
+
+</Project>
