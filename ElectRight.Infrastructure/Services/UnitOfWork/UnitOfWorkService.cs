@@ -1,25 +1,24 @@
-﻿using ElectRight.Infrastructure.Data;
-using ElectRightApplication.Data;
-using ElectRightApplication.Data.UnitOfWork;
+﻿using ElectRightApplication.Data.UnitOfWork;
+using ElectRightApplication.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace ElectRight.Infrastructure.App.CandidateElect.UnitOfWorkServices
+namespace ElectRight.Infrastructure.Services.UnitOfWork
 {
     public class UnitOfWorkService<T>(IUnitOfWorkService unitOfWork, Logger<UnitOfWorkService> logger) : IUnitOfWorkService<T>
     {
-        private bool isTransactionActive = false;
+        private bool isTransactionActive;
 
         public async Task BeginTransactionAsync()
         {
             CheckAndThrowIfNeeded();
             try
             {
-                await unitOfWork.BeginTransactionAsync();
+                aw.BeginTransactionAsync();
                 isTransactionActive = true;
             }
             catch (Exception e)
             {
-                Console.WriteLine("BeginTransactionAsync has failed",e);
+                logger.LogError("BeginTransactionAsync has failed", e);
                 throw;
             }
         }
@@ -29,12 +28,12 @@ namespace ElectRight.Infrastructure.App.CandidateElect.UnitOfWorkServices
             CheckAndThrowIfNeeded();
             try
             {
-                await unitOfWork.BeginTransactionAsync();
+                await unitOfWork.e();
                 isTransactionActive = true;
             }
             catch (Exception e)
             {
-                Console.WriteLine("EndTransactionAsync has failed",e);
+                logger.LogError("EndTransactionAsync has failed", e);
                 throw;
             }
         }

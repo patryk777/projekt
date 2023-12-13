@@ -1,4 +1,4 @@
-﻿namespace ElectRightApplication.Data
+﻿namespace ElectRightApplication.Interfaces
 {
     public interface IUnitOfWorkService
     {

@@ -1,5 +1,6 @@
 using Azure.Identity;
 using ElectRight.Infrastructure.Data;
+using ElectRight.Infrastructure.Services.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<UnitOfWorkService>(options =>
+builder.Services.AddDbContext<UnitOfWorkService<>>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
         .EnableSensitiveDataLogging());
 

@@ -1,9 +1,6 @@
-
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using DTOs;
 
-namespace ElectRight.Api.Interfaces
+namespace ElectRightApplication.Interfaces
 {
     public interface IVoterService
     {

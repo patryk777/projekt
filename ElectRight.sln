@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectRight.Configuration", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectRight.Api.Contracts", "ElectRight.Api.Contracts\ElectRight.Api.Contracts.csproj", "{5E86B6CD-124A-433E-A2A9-908BA1D24051}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectRight.EventGrid", "ElectRight.EventGrid\ElectRight.EventGrid.csproj", "{B4AEEA70-90EF-4741-B9C4-94FBD8691B1E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectRight.Mediator", "ElectRight.Mediator\ElectRight.Mediator.csproj", "{76989664-999C-44E6-93F1-66C3CD250C72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectRight.Core", "ElectRight.Core\ElectRight.Core.csproj", "{A26FE547-9A09-4507-9A2A-EF6B909AC7BE}"
@@ -53,10 +51,6 @@ Global
 		{5E86B6CD-124A-433E-A2A9-908BA1D24051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E86B6CD-124A-433E-A2A9-908BA1D24051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E86B6CD-124A-433E-A2A9-908BA1D24051}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4AEEA70-90EF-4741-B9C4-94FBD8691B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4AEEA70-90EF-4741-B9C4-94FBD8691B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4AEEA70-90EF-4741-B9C4-94FBD8691B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4AEEA70-90EF-4741-B9C4-94FBD8691B1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76989664-999C-44E6-93F1-66C3CD250C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76989664-999C-44E6-93F1-66C3CD250C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76989664-999C-44E6-93F1-66C3CD250C72}.Release|Any CPU.ActiveCfg = Release|Any CPU

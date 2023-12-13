@@ -13,7 +13,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ElectRight.EventGrid\ElectRight.EventGrid.csproj" />
     <ProjectReference Include="..\ElectRight.Core\ElectRight.Core.csproj" />
   </ItemGroup>
 </Project>

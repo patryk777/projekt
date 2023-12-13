@@ -1,7 +1,4 @@
-using System;
-using System.Threading.Tasks;
-
-namespace ElectRight.Api.Interfaces
+namespace ElectRightApplication.Interfaces
 {
     public interface IVoteService
     {
